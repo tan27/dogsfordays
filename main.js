@@ -1,10 +1,12 @@
-
-
-
 async function start() {
+    try {
     const response = await fetch("https://dog.ceo/api/breeds/list/all")
     const data = await response.json()
     createBreedList(data.message)
+
+    } catch (e) {
+        console.log("Error")
+    }
 }
 
 start()
